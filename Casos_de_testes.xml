@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project>
+    <projectId>10000</projectId>
+    <projectKey>DP</projectKey>
+    <exportDate>2023-11-11 15:09:12 UTC</exportDate>
+    <folders>
+        <folder fullPath="Login" index="0"/>
+    </folders>
+    <testCases>
+        <testCase id="111946082" key="DP-T1">
+            <attachments/>
+            <confluencePageLinks/>
+            <createdBy>Rafael Porto Marques</createdBy>
+            <createdOn>2023-11-11 14:47:04 UTC</createdOn>
+            <customFields/>
+            <folder><![CDATA[Login]]></folder>
+            <issues/>
+            <labels/>
+            <name><![CDATA[Login bem-sucedido com credenciais válidas.]]></name>
+            <objective><![CDATA[Verificar se um usu&aacute;rio registrado pode fazer login com sucesso no sistema. ]]></objective>
+            <owner>5f80586425fbdf0068927713</owner>
+            <precondition><![CDATA[<ul><li>O usu&aacute;rio j&aacute; possui uma conta v&aacute;lida no sistema.</li><li>A p&aacute;gina de login est&aacute; acess&iacute;vel.</li></ul>]]></precondition>
+            <priority><![CDATA[Normal]]></priority>
+            <status><![CDATA[Approved]]></status>
+            <parameters/>
+            <testDataWrapper/>
+            <testScript type="steps">
+                <steps>
+                    <step index="0">
+                        <customFields/>
+                        <description><![CDATA[Acesse a p&aacute;gina de login do sistema. ]]></description>
+                        <expectedResult><![CDATA[O usu&aacute;rio deve ser redirecionado para a p&aacute;gina inicial, indicando que o login foi bem-sucedido. ]]></expectedResult>
+                        <testData><![CDATA[Credenciais v&aacute;lidas (e-mail/username e senha). ]]></testData>
+                    </step>
+                </steps>
+            </testScript>
+        </testCase>
+        <testCase id="111946083" key="DP-T2">
+            <attachments/>
+            <confluencePageLinks/>
+            <createdBy>Rafael Porto Marques</createdBy>
+            <createdOn>2023-11-11 14:47:31 UTC</createdOn>
+            <customFields/>
+            <folder><![CDATA[Login]]></folder>
+            <issues/>
+            <labels/>
+            <name><![CDATA[Registro bem-sucedido de um novo usuário.]]></name>
+            <objective><![CDATA[Assegurar que um novo usu&aacute;rio possa criar uma conta com sucesso. ]]></objective>
+            <owner>5f80586425fbdf0068927713</owner>
+            <precondition><![CDATA[<ul><li>O usu&aacute;rio n&atilde;o possui uma conta existente no sistema.</li><li>A p&aacute;gina de cria&ccedil;&atilde;o de conta est&aacute; acess&iacute;vel.</li></ul>]]></precondition>
+            <priority><![CDATA[Normal]]></priority>
+            <status><![CDATA[Approved]]></status>
+            <parameters/>
+            <testDataWrapper/>
+            <testScript type="bdd">
+                <details><![CDATA[Given Usuário na página de login
+When Eu insiro credenciais inválidas (e-mail/username ou senha incorretos)
+Then O sistema deve exibir uma mensagem de erro indicando credenciais inválidas]]></details>
+            </testScript>
+        </testCase>
+        <testCase id="111946088" key="DP-T3">
+            <attachments/>
+            <confluencePageLinks/>
+            <createdBy>Rafael Porto Marques</createdBy>
+            <createdOn>2023-11-11 14:48:15 UTC</createdOn>
+            <customFields/>
+            <folder><![CDATA[Login]]></folder>
+            <issues/>
+            <labels/>
+            <name><![CDATA[Recuperação bem-sucedida de senha.]]></name>
+            <objective><![CDATA[Garantir que um usu&aacute;rio possa recuperar sua senha com sucesso. ]]></objective>
+            <owner>5f80586425fbdf0068927713</owner>
+            <precondition><![CDATA[<ul><li>O usu&aacute;rio esqueceu sua senha.</li><li>A p&aacute;gina de recupera&ccedil;&atilde;o de senha est&aacute; acess&iacute;vel.</li></ul>]]></precondition>
+            <priority><![CDATA[Normal]]></priority>
+            <status><![CDATA[Approved]]></status>
+            <parameters/>
+            <testDataWrapper/>
+            <testScript type="steps">
+                <steps>
+                    <step index="0">
+                        <customFields/>
+                        <description><![CDATA[Acesse a p&aacute;gina de cria&ccedil;&atilde;o de conta no sistema. ]]></description>
+                        <expectedResult><![CDATA[O usu&aacute;rio deve ser redirecionado para a p&aacute;gina de login ou receber uma confirma&ccedil;&atilde;o de sucesso. ]]></expectedResult>
+                        <testData><![CDATA[Informe todos os campos obrigat&oacute;rios com dados v&aacute;lidos. ]]></testData>
+                    </step>
+                </steps>
+            </testScript>
+        </testCase>
+        <testCase id="111946099" key="DP-T4">
+            <attachments/>
+            <confluencePageLinks/>
+            <createdBy>Rafael Porto Marques</createdBy>
+            <createdOn>2023-11-11 14:50:02 UTC</createdOn>
+            <customFields/>
+            <folder><![CDATA[Login]]></folder>
+            <issues/>
+            <labels/>
+            <name><![CDATA[Tentativa de login com credenciais inválidas.]]></name>
+            <objective><![CDATA[Garantir que um usu&aacute;rio n&atilde;o consiga fazer login com credenciais inv&aacute;lidas. ]]></objective>
+            <owner>5f80586425fbdf0068927713</owner>
+            <precondition><![CDATA[<ul><li>O usu&aacute;rio possui uma conta no sistema.</li><li>A p&aacute;gina de login est&aacute; acess&iacute;vel.</li></ul>]]></precondition>
+            <priority><![CDATA[Normal]]></priority>
+            <status><![CDATA[Approved]]></status>
+            <parameters/>
+            <testDataWrapper/>
+            <testScript type="bdd">
+                <details><![CDATA[Given que estou na página de criação de conta
+When eu insiro apenas parte dos campos obrigatórios com dados válidos
+Then o sistema deve exibir mensagens de erro indicando a necessidade de preencher todos os campos obrigatórios
+And o registro não deve ser concluído]]></details>
+            </testScript>
+        </testCase>
+    </testCases>
+</project>
